@@ -13,26 +13,17 @@ public class CalculatorServiceImpl implements CalculatorService{
 
     final private Logger logger = LoggerFactory.getLogger(CalculatorServiceImpl.class);
 
-    @Cacheable("parallelepiped")
     public ParallelepipedCalculations calculate(Parallelepiped parallelepiped)  throws InterruptedException {
 
-        try {
 
-            Thread.sleep(5000);
-            logger.info("Successful calculations");
+        logger.info("Successful calculations");
 
-            return new ParallelepipedCalculations(parallelepiped.getWidth() * parallelepiped.getDepth(),
+        return new ParallelepipedCalculations(parallelepiped.getWidth() * parallelepiped.getDepth(),
                     parallelepiped.getHeight() * parallelepiped.getDepth(),
                     parallelepiped.getHeight() * parallelepiped.getWidth(),
                     2 * (parallelepiped.getDepth()) + parallelepiped.getHeight()
                             + parallelepiped.getWidth(),
                     parallelepiped.getDepth() * parallelepiped.getHeight()
                             * parallelepiped.getWidth());
-        } catch (InterruptedException e) {
-
-        }
-        //logger.info("Error calculations");
-        //return new ParallelepipedCalculations(0, 0, 0, 0, 0);
-        return null;
     }
 }
