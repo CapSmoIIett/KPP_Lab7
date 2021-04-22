@@ -40,5 +40,4 @@ class AppApplicationTests {
                 .andExpect(status().isOk())
                 .andExpect(content().json("{areaBot:600.0,areaSide:300.0,areaFront:200.0,areaFull:90.0,volume:6000.0}"));
     }
-
 }

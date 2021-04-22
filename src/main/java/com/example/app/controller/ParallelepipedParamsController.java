@@ -28,7 +28,7 @@ public class ParallelepipedParamsController {
                                                 @RequestParam ("w") @Min (value = 1  , message = "Width must be more 1")
                                                 double width,
                                                 @RequestParam ("d") @Min (value = 1  , message = "Depth must be more 1")
-                                                double depth) throws ConstraintViolationException {
+                                                double depth) throws ConstraintViolationException, InterruptedException  {
         Parallelepiped parallelepiped = new Parallelepiped(height, width, depth);
         return calculatorService.calculate(parallelepiped);
     }
