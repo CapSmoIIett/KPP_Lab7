@@ -27,6 +27,7 @@ class AppApplicationTests {
                 .andExpect(content().json("{areaBot:1.0,areaSide:1.0,areaFront:1.0,areaFull:4.0,volume:1.0}"));
     }
 
+    @Test
     void testTwo() throws Exception {
         this.mockMvc.perform(get("/?h=5&w=5&d=5"))
                 .andDo(print())
@@ -34,8 +35,9 @@ class AppApplicationTests {
                 .andExpect(content().json("{areaBot:25.0,areaSide:25.0,areaFront:25.0,areaFull:20.0,volume:125.0}"));
     }
 
+    @Test
     void testThree() throws Exception {
-        this.mockMvc.perform(get("?h=10&w=20&d=30"))
+        this.mockMvc.perform(get("/?h=10&w=20&d=30"))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(content().json("{areaBot:600.0,areaSide:300.0,areaFront:200.0,areaFull:90.0,volume:6000.0}"));
