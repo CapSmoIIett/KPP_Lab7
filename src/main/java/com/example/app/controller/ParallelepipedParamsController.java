@@ -2,7 +2,7 @@ package com.example.app.controller;
 
 import com.example.app.domain.Parallelepiped;
 import com.example.app.domain.ParallelepipedCalculations;
-import com.example.app.service.CalculatorServiceImpl;
+import com.example.app.service.CalculatorService;
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,7 +19,7 @@ import javax.validation.constraints.Min;
 @AllArgsConstructor
 public class ParallelepipedParamsController {
 
-    final private CalculatorServiceImpl calculatorService;
+    final private CalculatorService calculatorService;
     final private Logger logger = LoggerFactory.getLogger(ParallelepipedParamsController.class);
 
     @GetMapping("/")
